@@ -1,0 +1,3 @@
+com/mapred/TFIDF.class
+com/mapred/TFIDFReducer.class
+com/mapred/TFIDFMapper.class

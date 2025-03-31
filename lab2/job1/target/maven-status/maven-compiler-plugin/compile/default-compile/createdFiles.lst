@@ -1,0 +1,5 @@
+com/mapred/SortMapper.class
+com/mapred/InvertedIndex.class
+com/mapred/InvertedIndexMapper.class
+com/mapred/InvertedIndexReducer.class
+com/mapred/SortReducer.class
