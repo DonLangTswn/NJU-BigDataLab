@@ -24,7 +24,7 @@ public class InvertedIndex extends Configured implements Tool {
         String input_path = args[0];
         String output_path = args[1];
         String stopwords_path = args[2];
-        String temp_path = "user/221220070stu/temp-" + System.currentTimeMillis();
+        String temp_path = "temp-" + System.currentTimeMillis();
 
         Job index_job = Job.getInstance(super.getConf(), "InvertedIndex");
 
