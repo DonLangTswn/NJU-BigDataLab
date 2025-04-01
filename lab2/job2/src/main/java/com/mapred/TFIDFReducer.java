@@ -12,7 +12,7 @@ import org.apache.hadoop.mapreduce.Reducer;
 public class TFIDFReducer extends Reducer<Text, Text, Text, DoubleWritable> {
     @Override
     protected void reduce(Text key, Iterable<Text> values, Reducer<Text, Text, Text, DoubleWritable>.Context context) throws IOException, InterruptedException {
-        // Map：记录词语出现在哪几个文档中, 各出现了几次
+        //- Map：记录词语出现在哪几个文档中, 各出现了几次
         Map<String, Integer> tfMap = new HashMap<>();
         for (Text value: values) {
             String fileName = value.toString();
