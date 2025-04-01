@@ -1,12 +1,14 @@
 package com.mapred;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URI;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -27,7 +29,9 @@ public class InvertedIndexMapper extends Mapper<LongWritable, Text, Text, Text> 
         URI[] stopwordUris = context.getCacheFiles();
         if (stopwordUris != null && stopwordUris.length > 0) {
             // Open stopwords-file with "try"
-            try (BufferedReader reader = new BufferedReader(new FileReader(stopwordUris[0].getPath()))) {
+            Path stopwordsPath = new Path(stopwordUris[0].toString());
+            FileSystem fs = FileSystem.get(context.getConfiguration());
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(fs.open(stopwordsPath)))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
                     line = line.trim();     // clear the space
