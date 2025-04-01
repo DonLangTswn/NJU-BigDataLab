@@ -6,7 +6,7 @@
 
     <groupId>com.mapred</groupId>
     <artifactId>job1</artifactId>
-    <version>6</version>
+    <version>7</version>
 
 <!-- 下面的要保持一致 -->
     <packaging>jar</packaging>
