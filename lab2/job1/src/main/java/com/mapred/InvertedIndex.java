@@ -23,7 +23,7 @@ public class InvertedIndex extends Configured implements Tool {
         }
         String input_path = args[0];
         String output_path = args[1];
-        String temp_path = input_path + "-tmp";
+        String temp_path = "hdfs://localhost:9000/temp-" + System.currentTimeMillis();
 
         Job index_job = Job.getInstance(super.getConf(), "InvertedIndex");
         index_job.setJarByClass(InvertedIndex.class);           // Main class
