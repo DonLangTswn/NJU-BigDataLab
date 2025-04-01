@@ -18,6 +18,9 @@ public class InvertedIndexMapper extends Mapper<LongWritable, Text, Text, Text> 
         // 获取输入文件、文件名
         FileSplit fileSplit = (FileSplit)context.getInputSplit();
         String fileName = fileSplit.getPath().getName().toString();
+        if (fileName.equals("cn_stopwords.txt")) {
+            return;
+        }
 
         Set<String> stopwords = new HashSet<>();    // stopwords-list
         // Get stopwords-file
