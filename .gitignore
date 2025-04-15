@@ -1,3 +1,5 @@
 .vscode
 22122*
 .DS_Store
+*/.DS_Store
+**/.DS_Store
