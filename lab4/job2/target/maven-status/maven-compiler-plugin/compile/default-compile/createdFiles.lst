@@ -1,0 +1,3 @@
+com/mapred/SharedFollowMapper.class
+com/mapred/SharedFollow.class
+com/mapred/SharedFollowReducer.class
