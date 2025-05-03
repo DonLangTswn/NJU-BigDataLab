@@ -52,6 +52,7 @@ public class SharedFollowReducer extends Reducer<Text, Text, Text, Text> {
                 }
             }
         }
+        if (shared_num == 0)  return;
         if (shared_num <= threshold) {
             mos.write("below"+ threshold, key, new Text(shared_follow.toString()));
         }
